@@ -27,12 +27,14 @@ function obfuscate($filename)                   // takes a file_path as input, r
         file_put_contents($tmp_filename,implode(PHP_EOL,$t_source));
         $filename = $tmp_filename; // override 
     }
-    
+
     try
     {
-        $source = php_strip_whitespace($filename);
+        //$source = php_strip_whitespace($filename);
         fprintf(STDERR,"Obfuscating %s%s",$src_filename,PHP_EOL);
         //var_dump( token_get_all($source));    exit;
+        $source = file_get_contents($filename);     
+        
         if ($source==='')
         {
             if ($conf->allow_and_overwrite_empty_files) return $source;
