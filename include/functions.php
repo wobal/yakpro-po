@@ -33,7 +33,11 @@ function obfuscate($filename)                   // takes a file_path as input, r
         //$source = php_strip_whitespace($filename);
         fprintf(STDERR,"Obfuscating %s%s",$src_filename,PHP_EOL);
         //var_dump( token_get_all($source));    exit;
-        $source = file_get_contents($filename);     
+        if ((strpos($filename,"src/Controller") > 0) || (strpos($filename,"src/Entity") > 0)) {
+                $source = file_get_contents($filename);
+        } else {
+                $source = php_strip_whitespace($filename);
+        }
         
         if ($source==='')
         {
