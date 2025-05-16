@@ -68,7 +68,7 @@ $conf->obfuscate_method_name            = false;         // self explanatory
 $conf->obfuscate_namespace_name         = false;         // self explanatory
 $conf->obfuscate_label_name             = false;         // label: , goto label;  obfuscation
 $conf->obfuscate_if_statement           = true;         // obfuscation of  if else elseif statements
-$conf->obfuscate_loop_statement         = true;         // obfuscation of  for while do while statements
+$conf->obfuscate_loop_statement         = false;         // obfuscation of  for while do while statements
 $conf->obfuscate_string_literal         = true;         // pseudo-obfuscation of  string literals
 
 $conf->shuffle_stmts                    = false;         // shuffle chunks of statements!  disable this obfuscation (or minimize the number of chunks) if performance is important for you!
